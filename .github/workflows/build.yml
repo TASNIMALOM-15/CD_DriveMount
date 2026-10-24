@@ -1,0 +1,108 @@
+name: Build DriveMount APK
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # rclone engine (.aar) অনেক সময় নেয়, তাই rclone source না বদলালে cache থেকে নেওয়া হয়
+      - name: Restore rclone AAR cache
+        id: aarcache
+        uses: actions/cache@v4
+        with:
+          path: app/libs/rclone.aar
+          key: rclone-aar-${{ hashFiles('engine/rclone-master.zip', '.github/workflows/build.yml', 'engine/terabox/terabox.go') }}
+
+      - name: Unpack rclone source
+        if: steps.aarcache.outputs.cache-hit != 'true'
+        run: unzip -q engine/rclone-master.zip -d engine
+
+      - name: Set up Go (rclone-এর go.mod অনুযায়ী)
+        if: steps.aarcache.outputs.cache-hit != 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: engine/rclone-master/go.mod
+          cache-dependency-path: engine/rclone-master/go.sum
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install Android NDK
+        if: steps.aarcache.outputs.cache-hit != 'true'
+        run: |
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKMANAGER" --licenses > /dev/null || true
+          "$SDKMANAGER" "ndk;27.2.12479018"
+          echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/27.2.12479018" >> "$GITHUB_ENV"
+
+      - name: Build rclone AAR (gomobile)
+        if: steps.aarcache.outputs.cache-hit != 'true'
+        working-directory: engine/rclone-master
+        run: |
+          # rclone-এর gomobile প্যাকেজে ফোল্ডার কপি/সরানো/sync (sync/copy, sync/move, sync/sync) জোড়া থাকে না।
+          # তাই একটি ছোট ফাইল যোগ করে সেই প্যাকেজ লিংক করা হয় (rclone-এর source অপরিবর্তিত থাকে)।
+          # Terabox backend: আমাদের নিজস্ব Go কোড (engine/terabox)। আগে compile করে দেখা হয়;
+          # ব্যর্থ হলে সেটি বাদ দিয়েই build চলে, যাতে বাকি অ্যাপ আটকে না যায়।
+          TERABOX_OK=0
+          if [ -f "$GITHUB_WORKSPACE/engine/terabox/terabox.go" ]; then
+            mkdir -p backend/terabox
+            cp "$GITHUB_WORKSPACE/engine/terabox/terabox.go" backend/terabox/terabox.go
+            if go build ./backend/terabox/ > terabox-build.log 2>&1; then
+              TERABOX_OK=1
+              echo "Terabox backend compiled successfully"
+            else
+              echo "::warning::Terabox backend failed to compile - building WITHOUT it. Compiler output:"
+              cat terabox-build.log
+              rm -rf backend/terabox
+            fi
+          fi
+          printf 'package gomobile\n\nimport (\n\t_ "github.com/rclone/rclone/fs/sync"\n' > librclone/gomobile/extras.go
+          if [ "$TERABOX_OK" = "1" ]; then
+            printf '\t_ "github.com/rclone/rclone/backend/terabox"\n' >> librclone/gomobile/extras.go
+          fi
+          printf ')\n' >> librclone/gomobile/extras.go
+          go install golang.org/x/mobile/cmd/gomobile@latest
+          go install golang.org/x/mobile/cmd/gobind@latest
+          export PATH="$PATH:$(go env GOPATH)/bin"
+          gomobile init
+          mkdir -p "$GITHUB_WORKSPACE/app/libs"
+          gomobile bind -v \
+            -target=android/arm,android/arm64 \
+            -androidapi 26 \
+            -javapkg=org.rclone \
+            -ldflags="-s -w" \
+            -o "$GITHUB_WORKSPACE/app/libs/rclone.aar" \
+            github.com/rclone/rclone/librclone/gomobile
+
+      - name: Upload Terabox compile log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: terabox-build-log
+          path: engine/rclone-master/terabox-build.log
+          if-no-files-found: ignore
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.10.2"
+
+      - name: Build debug APK
+        run: gradle :app:assembleDebug --no-daemon
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: DriveMount-debug-apk
+          path: app/build/outputs/apk/debug/*.apk

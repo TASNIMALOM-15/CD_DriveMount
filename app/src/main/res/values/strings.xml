@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DriveMount</string>
+
+    <!-- Engine -->
+    <string name="engine_running">rclone engine is running</string>
+    <string name="engine_failed">Engine failed to start</string>
+    <string name="engine_loading">Starting rclone engine…</string>
+    <string name="engine_details">rclone %1$s · Go %2$s · %3$s</string>
+    <string name="saved_remotes">Saved remotes</string>
+
+    <!-- Common -->
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Accounts / Home -->
+    <string name="add_account">Add account</string>
+    <string name="no_accounts_title">No accounts yet</string>
+    <string name="no_accounts_body">Add a cloud or storage account to start managing your files.</string>
+    <string name="more_options">More options</string>
+    <string name="menu_refresh">Refresh usage</string>
+    <string name="menu_rename">Rename</string>
+    <string name="menu_delete">Remove</string>
+    <string name="rename_title">Rename account</string>
+    <string name="rename_label">Account name</string>
+    <string name="delete_title">Remove account?</string>
+    <string name="delete_body">%1$s will be removed from DriveMount and its saved login deleted from this phone. Files stored in the cloud are not touched.</string>
+    <string name="usage_of">%1$s of %2$s used</string>
+    <string name="usage_used">%1$s used</string>
+    <string name="provider_local">Local storage</string>
+    <string name="provider_webdav">WebDAV</string>
+
+    <!-- Add account -->
+    <string name="provider_drive">Google Drive</string>
+    <string name="provider_mega">Mega</string>
+    <string name="provider_pcloud">pCloud</string>
+    <string name="provider_terabox">Terabox</string>
+    <string name="add_provider">Storage type</string>
+    <string name="add_details">Details</string>
+    <string name="add_name_label">Account name</string>
+    <string name="add_url_label">Server URL (https://…)</string>
+    <string name="add_user_label">Username</string>
+    <string name="add_pass_label">Password</string>
+    <string name="add_email_label">Email</string>
+    <string name="add_2fa_label">2FA code (only if enabled)</string>
+    <string name="add_clientid_label">Client ID (recommended)</string>
+    <string name="add_clientsecret_label">Client secret</string>
+    <string name="add_drive_hint">Google is retiring the shared sign-in ID used by rclone during 2026. For reliable access, create your own Client ID and secret (Desktop app type) and enter them here. Leave both empty to try the shared ID.</string>
+    <string name="add_drive_help">How to create a Client ID</string>
+    <string name="add_pcloud_hint">You will sign in to pCloud in your browser. Your password is never shown to DriveMount.</string>
+    <string name="add_ndus_label">ndus token (cookie value)</string>
+    <string name="add_terabox_hint">Log in to terabox.com in a browser, open the developer tools, find the cookie named ndus and paste its value here. It works like a password, so keep it private. If it expires, remove the account and add it again.</string>
+    <string name="add_signin_google">Sign in with Google</string>
+    <string name="add_signin_pcloud">Sign in with pCloud</string>
+    <string name="add_button">Add account</string>
+    <string name="add_saving">Adding…</string>
+    <string name="add_waiting_title">Sign in with your browser</string>
+    <string name="add_waiting_body">Finish signing in in your browser. When you see the success page, come back to DriveMount.</string>
+    <string name="add_open_browser">Open browser</string>
+    <string name="add_timeout">Sign-in timed out. Please try again.</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="appearance">Appearance</string>
+    <string name="about">About</string>
+    <string name="theme_mode">Theme mode</string>
+    <string name="mode_system">System</string>
+    <string name="mode_light">Light</string>
+    <string name="mode_dark">Dark</string>
+    <string name="theme_color">Theme color</string>
+    <string name="color_default">Default (Material You)</string>
+    <string name="color_material_fmt">Material palette · %1$s</string>
+    <string name="color_custom_fmt">Custom color · %1$s</string>
+    <string name="action_material">Material</string>
+    <string name="action_custom">Custom</string>
+    <string name="action_reset">Reset</string>
+    <string name="preview">Preview</string>
+    <string name="preview_filled">Filled</string>
+    <string name="preview_tonal">Tonal</string>
+
+    <!-- Pickers -->
+    <string name="sheet_material_title">Material palette</string>
+    <string name="sheet_custom_title">Custom color</string>
+    <string name="picker_hex">HEX</string>
+    <string name="picker_hue">Hue</string>
+    <string name="picker_alpha">Alpha %1$d%%</string>
+    <string name="picker_rgb">RGB</string>
+    <string name="picker_hsv">HSV</string>
+
+    <!-- File browser -->
+    <string name="close">Close</string>
+    <string name="browser_account_missing">This account no longer exists.</string>
+    <string name="browser_selected">%1$d selected</string>
+    <string name="browser_copy">Copy</string>
+    <string name="browser_cut">Cut</string>
+    <string name="browser_delete">Delete</string>
+    <string name="browser_search">Search</string>
+    <string name="browser_search_hint">Search in this folder</string>
+    <string name="browser_sort">Sort</string>
+    <string name="sort_name">Name</string>
+    <string name="sort_date">Date modified</string>
+    <string name="sort_size">Size</string>
+    <string name="browser_new_folder">New folder</string>
+    <string name="browser_folder_name">Folder name</string>
+    <string name="browser_create">Create</string>
+    <string name="browser_retry">Try again</string>
+    <string name="browser_empty">This folder is empty.</string>
+    <string name="browser_no_match">No files match your search.</string>
+    <string name="browser_delete_title">Delete?</string>
+    <string name="browser_delete_body">%1$d item(s) will be deleted, folders together with everything inside. This cannot be undone from DriveMount.</string>
+    <string name="browser_working">Working…</string>
+    <string name="browser_clip_copy">%1$d item(s) to copy</string>
+    <string name="browser_clip_move">%1$d item(s) to move</string>
+    <string name="browser_paste_here">Paste here</string>
+    <string name="browser_bad_name">The name cannot be empty or contain a slash.</string>
+    <string name="browser_name_exists">An item with this name already exists.</string>
+    <string name="browser_into_itself">A folder cannot be copied into itself.</string>
+    <string name="info_type">Type</string>
+    <string name="info_size">Size</string>
+    <string name="info_modified">Modified</string>
+    <string name="info_path">Location</string>
+    <string name="info_download_hint">Downloading and opening files arrives in the next step.</string>
+    <string name="access_title">Allow access to phone storage</string>
+    <string name="access_body">DriveMount needs permission to see the files on this phone so you can copy them to and from your cloud accounts.</string>
+    <string name="access_grant">Allow access</string>
+
+    <!-- Transfers -->
+    <string name="transfers">Transfers</string>
+    <string name="tr_clear_finished">Clear finished</string>
+    <string name="tr_empty">No transfers yet. Downloads, uploads and copies appear here.</string>
+    <string name="tr_waiting">Waiting in line</string>
+    <string name="tr_preparing">Preparing…</string>
+    <string name="tr_running_fmt">%1$s of %2$s · %3$s/s</string>
+    <string name="tr_working">Working…</string>
+    <string name="tr_done">Completed</string>
+    <string name="tr_cancelled">Cancelled</string>
+    <string name="tr_failed">Failed</string>
+    <string name="tr_cancel">Cancel</string>
+    <string name="tr_retry">Try again</string>
+    <string name="tr_remove">Remove from list</string>
+    <string name="tr_channel_name">Transfers</string>
+    <string name="tr_notif_title">DriveMount transfers</string>
+    <string name="tr_notif_done_title">Transfers finished</string>
+    <string name="tr_notif_done_ok">%1$d completed</string>
+    <string name="tr_notif_done_mixed">%1$d completed, %2$d failed</string>
+    <string name="tr_notif_tap_open">Tap to open</string>
+    <string name="browser_queued">Added %1$d item(s) to transfers</string>
+    <string name="browser_view_transfers">View</string>
+    <string name="browser_download">Download</string>
+    <string name="browser_upload">Upload files</string>
+    <string name="browser_open">Open</string>
+    <string name="browser_no_app">No app on this phone can open this file.</string>
+
+    <!-- Sync -->
+    <string name="sync_title">Sync</string>
+    <string name="sync_new">New sync</string>
+    <string name="sync_empty">No sync tasks yet. Create one to copy a folder between two accounts, manually or automatically.</string>
+    <string name="sync_run_now">Run now</string>
+    <string name="sync_edit">Edit</string>
+    <string name="sync_delete">Delete</string>
+    <string name="sync_delete_title">Delete this sync?</string>
+    <string name="sync_delete_body">Only the saved setting is removed. No files are touched.</string>
+    <string name="sync_started">Sync added to transfers</string>
+    <string name="sync_confirm_title">Run this sync?</string>
+    <string name="sync_mirror_body">Mirror makes the destination identical to the source. Files that exist only in the destination will be deleted.</string>
+    <string name="sync_move_body">Move copies the files and then deletes them from the source.</string>
+    <string name="sync_last_run_fmt">Last run: %1$s</string>
+    <string name="sync_never">Never run</string>
+    <string name="mode_copy">Copy</string>
+    <string name="mode_mirror">Mirror</string>
+    <string name="mode_move">Move</string>
+    <string name="sync_mode_copy_desc">Copies new and changed files. Nothing is deleted.</string>
+    <string name="sync_mode_mirror_desc">Makes the destination identical to the source. Files only in the destination are deleted.</string>
+    <string name="sync_mode_move_desc">Copies files, then deletes them from the source.</string>
+    <string name="sync_interval_manual">Only when I tap Run now</string>
+    <string name="sync_interval_hour">Every hour</string>
+    <string name="sync_interval_6h">Every 6 hours</string>
+    <string name="sync_interval_12h">Every 12 hours</string>
+    <string name="sync_interval_day">Every day</string>
+    <string name="sync_interval_note">Automatic runs need an internet connection and happen roughly at the chosen interval, not at exact times.</string>
+    <string name="sync_edit_title">Sync settings</string>
+    <string name="sync_name_label">Name</string>
+    <string name="sync_source">Source folder</string>
+    <string name="sync_destination">Destination folder</string>
+    <string name="sync_choose">Choose folder…</string>
+    <string name="sync_mode">Mode</string>
+    <string name="sync_interval">Run automatically</string>
+    <string name="sync_save">Save</string>
+    <string name="sync_err_incomplete">Enter a name and choose both folders.</string>
+    <string name="sync_err_overlap">Source and destination must be different folders (one cannot be inside the other).</string>
+    <string name="picker_title_account">Choose an account</string>
+    <string name="picker_select">Select this folder</string>
+    <string name="picker_empty">No subfolders here.</string>
+
+    <!-- Files app integration -->
+    <string name="menu_open_files">Open in Files app</string>
+    <string name="files_app_missing">No Files app was found on this phone.</string>
+
+    <!-- Phone storage locations -->
+    <string name="loc_internal">Internal storage</string>
+    <string name="loc_downloads">Downloads</string>
+    <string name="loc_app_data">App data</string>
+    <string name="loc_root">Root (/)</string>
+    <string name="loc_goto">Go to path…</string>
+    <string name="goto_title">Go to path</string>
+    <string name="goto_label">Full path, for example /sdcard</string>
+    <string name="goto_go">Go</string>
+    <string name="goto_error">Enter a full path that starts with /</string>
+    <string name="loc_data_hint">Android blocks access to other apps’ private data (/data/data, /data/user/…) without root. Only this app’s own data folder can be opened.</string>
+
+    <!-- Security -->
+    <string name="security">Security</string>
+    <string name="lock_title">DriveMount is locked</string>
+    <string name="lock_unlock">Unlock</string>
+    <string name="sec_app_lock">Lock app</string>
+    <string name="sec_app_lock_desc">Ask for fingerprint, face or screen lock when opening the app. Also hides the app in screenshots and recent apps.</string>
+    <string name="sec_confirm_title">Confirm it is you</string>
+    <string name="sec_no_screen_lock">Set up a screen lock, fingerprint or face unlock in your phone settings first.</string>
+    <string name="sec_protect_logins">Protect saved logins</string>
+    <string name="sec_protect_on">On. Logins and tokens are encrypted with a key kept in this phone secure hardware.</string>
+    <string name="sec_protect_off">Off. Turn this on, especially before using encrypted vaults.</string>
+    <string name="sec_turn_on">Turn on</string>
+
+    <!-- Backup: multi-factor -->
+    <string name="copy">Copy</string>
+    <string name="backup_pw2_label">Second password</string>
+    <string name="backup_pw2_confirm">Repeat second password</string>
+    <string name="backup_pw_same">The two passwords must be different.</string>
+    <string name="backup_key_title">Save your Backup Key</string>
+    <string name="backup_key_body">This key is the third part of the lock. It is shown only now and is not saved anywhere.</string>
+    <string name="backup_key_warn">Keep it in a password manager or on paper, apart from the backup file. Without it the backup cannot be opened.</string>
+    <string name="backup_key_saved">I have saved the Backup Key</string>
+    <string name="backup_key_continue">Continue</string>
+    <string name="backup_key_label">Backup Key</string>
+    <string name="backup_key_invalid">That Backup Key is not in the right format.</string>
+    <string name="backup_old_format">This is an older backup that needs only one password. Export again afterwards to upgrade it.</string>
+    <string name="gate_title">Authenticator code</string>
+    <string name="gate_off">Off. Turn it on to ask for a 6-digit code from your authenticator app before exporting or importing.</string>
+    <string name="gate_on">On. A 6-digit code is asked before exporting or importing. This protects the app on this phone; the backup file itself is protected by the passwords and the Backup Key.</string>
+    <string name="gate_enable">Turn on</string>
+    <string name="gate_disable">Turn off</string>
+    <string name="gate_setup_title">Set up authenticator</string>
+    <string name="gate_setup_body">Add this secret to an authenticator app (Google Authenticator, Aegis, 2FAS or similar), then type the 6-digit code it shows.</string>
+    <string name="gate_open_app">Open authenticator</string>
+    <string name="gate_no_app">No authenticator app was found. Copy the secret and add it by hand.</string>
+    <string name="gate_code_label">Authenticator code</string>
+    <string name="gate_wrong">That code is wrong or already used.</string>
+    <string name="gate_locked">Too many wrong codes. Try again in 30 seconds.</string>
+    <string name="gate_disable_title">Turn off authenticator</string>
+    <string name="gate_lost">Lost the authenticator? Use screen lock</string>
+    <string name="gate_lost_prompt">Confirm it is you</string>
+    <string name="gate_no_screen_lock">Set a screen lock on this phone first, then try again.</string>
+
+    <!-- Display settings -->
+    <string name="settings_display">Display</string>
+    <string name="settings_original_icons">Original cloud icons</string>
+    <string name="settings_original_icons_desc">Show each cloud\'s own logo instead of a generic icon</string>
+    <string name="settings_thumbnails">Image and video thumbnails</string>
+    <string name="settings_thumbnails_desc">Show previews in file lists. Cloud files are fetched to make them, which uses data</string>
+    <string name="view_grid">Grid view</string>
+    <string name="view_list">List view</string>
+    <string name="vault_in_card_open">Open vault</string>
+    <string name="delete_with_vaults">This also removes %1$d encrypted vault(s) inside it.</string>
+
+    <!-- Storage summary -->
+    <string name="storage_dialog_title">Cloud storage</string>
+    <string name="storage_col_type">Account type</string>
+    <string name="storage_col_name">Account name</string>
+    <string name="storage_col_total">Storage</string>
+    <string name="storage_col_used">Used</string>
+    <string name="storage_none">No cloud accounts yet.</string>
+    <string name="storage_refresh">Refresh</string>
+    <string name="storage_close">Close</string>
+
+    <!-- Encrypted vault -->
+    <string name="provider_crypt">Encrypted vault</string>
+    <string name="vault_title">Encrypted vault</string>
+    <string name="vault_create_new">Create new</string>
+    <string name="vault_open_existing">Open existing</string>
+    <string name="vault_where">Keep the vault in</string>
+    <string name="vault_need_account">Add a cloud account first, then create a vault inside it.</string>
+    <string name="vault_local_note">The vault is a folder of encrypted files on this phone. Without the recovery code or password, nobody can read it, even with file access.</string>
+    <string name="vault_local_need_access">Allow access to phone storage to keep a vault here.</string>
+    <string name="vault_local_folder_hint">Inside internal storage. Start with / for a full path (for example an SD card).</string>
+    <string name="vault_local_bad_path">That folder path is not valid.</string>
+    <string name="vault_local_failed">Could not set up phone storage.</string>
+    <string name="vault_folder">Folder for the encrypted files</string>
+    <string name="vault_secret">Recovery code or password</string>
+    <string name="vault_generate_code">Recovery code</string>
+    <string name="vault_use_code">Recovery code</string>
+    <string name="vault_use_password">My password</string>
+    <string name="vault_code_label">Recovery code</string>
+    <string name="vault_password_label">Password</string>
+    <string name="vault_password_hint">%1$d characters (at least %2$d, the longer and more random the better)</string>
+    <string name="vault_chars">%1$d characters</string>
+    <string name="vault_generate_note">A strong random recovery code will be created for you and shown once.</string>
+    <string name="vault_no_recovery">Nobody can recover your files without this code or password, not even us. If you lose it, the files are gone for good.</string>
+    <string name="vault_create_button">Create vault</string>
+    <string name="vault_open_button">Open vault</string>
+    <string name="vault_working">Working…</string>
+    <string name="vault_bad_code">That recovery code is not valid. It has 52 letters and digits.</string>
+    <string name="vault_not_found">No vault was found in that folder.</string>
+    <string name="vault_wrong_secret">The recovery code or password is wrong for this vault.</string>
+    <string name="vault_recovery_title">Save your recovery code</string>
+    <string name="vault_recovery_body">This is the only way to open your vault on another phone or after a reset. Write it down or store it in a password manager. It will not be shown again.</string>
+    <string name="vault_copy">Copy</string>
+    <string name="vault_saved_check">I saved it in a safe place</string>
+    <string name="vault_done">Done</string>
+
+    <!-- Encrypt before upload -->
+    <string name="enc_title">Do you want to encrypt your files?</string>
+    <string name="enc_point1">Files are encrypted on your device before they leave it, so the cloud can never read them.</string>
+    <string name="enc_point2">Encrypting takes a little more time than a normal upload.</string>
+    <string name="enc_point3">Files are split into small chunks, so instant video playback is possible.</string>
+    <string name="enc_point4">File names are hidden too. Without your recovery code or password nobody can open them.</string>
+    <string name="enc_point5">Cloud previews, thumbnails and search will not work for encrypted files.</string>
+    <string name="enc_yes">Yes, encrypt</string>
+    <string name="enc_no">No, upload as is</string>
+    <string name="vault_pick_title">Choose a vault</string>
+    <string name="vault_none_title">No vault yet</string>
+    <string name="vault_none_body">Create an encrypted vault first, then your files can be uploaded into it.</string>
+    <string name="vault_create_now">Create a vault</string>
+
+    <!-- Backup and restore -->
+    <string name="settings_backup">Backup and restore</string>
+    <string name="settings_backup_desc">Export all your cloud connections to one file, or import them back.</string>
+    <string name="home_import">Import from backup</string>
+    <string name="backup_title">Backup and restore</string>
+    <string name="backup_intro">Connect each cloud once, then export a backup file. Import it later, even on a new phone, to get back into all your clouds without typing emails, passwords or 2FA codes again.</string>
+    <string name="backup_warn">The file holds the keys to your clouds and vaults. It opens only with three things together: your first password, your second password and the Backup Key shown when you export. The Backup Key is not stored in the file or in this app. If you lose any one of the three, the file can never be opened, and nobody can recover it for you.</string>
+    <string name="backup_note_sessions">Some logins can expire over time (for example Mega with 2FA, or Terabox). If a cloud asks you to sign in again, add it again. Sync tasks are not included in the backup.</string>
+    <string name="backup_export">Export connections</string>
+    <string name="backup_import">Import connections</string>
+    <string name="backup_pw_title_export">Protect the backup</string>
+    <string name="backup_pw_title_import">Open the backup</string>
+    <string name="backup_pw_label">Backup password</string>
+    <string name="backup_pw_confirm">Repeat password</string>
+    <string name="backup_pw_short">At least %1$d characters. Longer is safer.</string>
+    <string name="backup_pw_mismatch">Passwords do not match</string>
+    <string name="backup_ok">OK</string>
+    <string name="backup_working">Please wait…</string>
+    <string name="backup_exported">Exported %1$d connection(s).</string>
+    <string name="backup_imported">Imported %1$d, already present %2$d, failed %3$d.</string>
+    <string name="backup_wrong_pw">Wrong password, second password or Backup Key, or the file is damaged.</string>
+    <string name="backup_not_backup">This is not a DriveMount backup file.</string>
+
+    <!-- Upload picker / crash report -->
+    <string name="upload_picker_title">Choose files to upload</string>
+    <string name="upload_picker_upload">Upload (%1$d)</string>
+    <string name="upload_picker_empty">This folder is empty.</string>
+    <string name="upload_picker_unreadable">This folder cannot be read.</string>
+    <string name="backup_no_picker">This phone or profile has no system file picker, so a backup file cannot be saved or opened here.</string>
+    <string name="crash_title">DriveMount closed unexpectedly</string>
+    <string name="crash_body">Tap Copy and send this report so the problem can be fixed.</string>
+
+    <!-- Player -->
+    <string name="browser_play">Play</string>
+    <string name="player_external">Open in another player</string>
+    <string name="player_playlist">Playlist</string>
+    <string name="player_playlist_count">%1$d of %2$d</string>
+    <string name="player_shuffle">Shuffle</string>
+    <string name="player_repeat">Repeat</string>
+    <string name="player_speed">Playback speed</string>
+    <string name="player_audio">Audio</string>
+    <string name="player_subtitles">Subtitles</string>
+    <string name="player_subtitles_off">Off</string>
+    <string name="player_no_tracks">No other audio tracks</string>
+    <string name="player_tracks">Audio and subtitles</string>
+    <string name="player_retry">Try again</string>
+    <string name="player_lock">Lock controls</string>
+    <string name="player_unlock">Unlock controls</string>
+    <string name="player_previous">Previous</string>
+    <string name="player_next">Next</string>
+    <string name="player_back_10">Back 10 seconds</string>
+    <string name="player_forward_10">Forward 10 seconds</string>
+    <string name="player_play">Play</string>
+    <string name="player_pause">Pause</string>
+    <string name="player_aspect">Picture size</string>
+    <string name="player_pip">Picture in picture</string>
+    <string name="player_rotate">Rotate screen</string>
+    <string name="player_minimize">Minimize player</string>
+    <string name="player_close">Close player</string>
+    <string name="player_fullscreen">Full screen</string>
+    <string name="player_up_next">Up next</string>
+    <string name="player_now_playing">Now playing</string>
+    <string name="playback_channel">Music playback</string>
+    <string name="playback_notification_text">Playing from DriveMount</string>
+
+    <!-- নিচের ট্যাব ও Videos -->
+    <string name="tab_home">Home</string>
+    <string name="tab_videos">Videos</string>
+    <string name="tab_add">Add</string>
+    <string name="tab_music">Music</string>
+    <string name="tab_photos">Photos</string>
+    <string name="tab_new_sync">Create new sync</string>
+    <string name="tab_music_soon">Music will come here soon.</string>
+    <string name="tab_photos_soon">Photos will come here soon.</string>
+    <string name="videos_pick_title">Choose a video folder</string>
+    <string name="videos_pick_hint">Pick a folder from any cloud. All videos inside it (and its subfolders) will show here, with thumbnails.</string>
+    <string name="videos_select_folder_btn">Choose folder</string>
+    <string name="videos_select_folder">Select this folder</string>
+    <string name="videos_pick_account">Choose a cloud</string>
+    <string name="videos_no_subfolders">No folders here. You can still select this folder.</string>
+    <string name="videos_change_folder">Change folder</string>
+    <string name="videos_refresh">Refresh</string>
+    <string name="videos_search">Search videos</string>
+    <string name="videos_sort">Sort</string>
+    <string name="videos_sort_name">Name</string>
+    <string name="videos_sort_date">Newest first</string>
+    <string name="videos_sort_size">Largest first</string>
+    <string name="videos_none">No videos found in this folder.</string>
+    <string name="videos_root">This folder</string>
+    <string name="videos_all">All</string>
+    <string name="music_pick_title">Choose a music folder</string>
+    <string name="music_pick_hint">Pick a folder from any cloud. All songs inside it (and its subfolders) will show here.</string>
+    <string name="music_none">No music found in this folder.</string>
+    <string name="photos_pick_title">Choose a photo folder</string>
+    <string name="photos_pick_hint">Pick a folder from any cloud. All photos inside it (and its subfolders) will show here.</string>
+    <string name="photos_none">No photos found in this folder.</string>
+    <string name="videos_add_folder">Add folder</string>
+    <string name="videos_remove_folder">Remove folder from list</string>
+</resources>

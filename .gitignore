@@ -1,0 +1,13 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+# CI-তে তৈরি হয়, repo-তে রাখার দরকার নেই
+/app/libs/
+/engine/rclone-master/

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- ডাউনলোড করে "খোলা" ফাইলগুলো -->
+    <cache-path
+        name="open"
+        path="open/" />
+</paths>

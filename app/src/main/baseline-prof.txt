@@ -1,0 +1,20 @@
+# Baseline Profile (হাতে লেখা, ওয়াইল্ডকার্ড): অ্যাপ ও UI লাইব্রেরির ক্লাসগুলো ইনস্টলের পর আগেভাগে কম্পাইল হয়,
+# তাই প্রথম চালু ও প্রথম স্ক্রলে JIT-এর ধীর শুরু কম লাগে।
+HSPLcom/drivemount/app/**;->**(**)**
+Lcom/drivemount/app/**;
+HSPLandroidx/compose/runtime/**;->**(**)**
+HSPLandroidx/compose/ui/**;->**(**)**
+HSPLandroidx/compose/foundation/**;->**(**)**
+HSPLandroidx/compose/material3/**;->**(**)**
+HSPLandroidx/compose/animation/**;->**(**)**
+HSPLandroidx/lifecycle/**;->**(**)**
+HSPLandroidx/navigation/**;->**(**)**
+HSPLandroidx/room/**;->**(**)**
+HSPLandroidx/work/**;->**(**)**
+HSPLcoil/**;->**(**)**
+HSPLandroidx/media3/exoplayer/**;->**(**)**
+Landroidx/compose/**;
+Landroidx/lifecycle/**;
+Landroidx/navigation/**;
+Landroidx/room/**;
+Lcoil/**;

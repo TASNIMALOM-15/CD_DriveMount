@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- ডাউনলোড করে "খোলা" ফাইলগুলো -->
+    <cache-path
+        name="open"
+        path="open/" />
+    <!-- অফলাইনে রাখা ফাইল অন্য অ্যাপে খোলার জন্য -->
+    <files-path
+        name="offline"
+        path="offline/" />
+</paths>
